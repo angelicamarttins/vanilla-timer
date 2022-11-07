@@ -45,6 +45,7 @@ button {
   background-color: #127369;
   color: #bfbfbf;
   font-size: 1.05rem;
+  cursor: pointer;
 }
 
 button:hover {

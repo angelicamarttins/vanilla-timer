@@ -1,12 +1,12 @@
-const timer = document.querySelector(".timer");
-const start = document.querySelector(".start");
-const pause = document.querySelector(".pause");
-const clear = document.querySelector(".clear");
+const timer = document.querySelector(".timer") as HTMLElement;
+const start = document.querySelector(".start") as HTMLElement;
+const pause = document.querySelector(".pause") as HTMLElement;
+const clear = document.querySelector(".clear") as HTMLElement;
 
-let intervalId;
+let intervalId: number;
 let second = 0;
 
-const getDate = () => {
+export const getDate = () => {
   const time = new Date(0, 0, 0, 0, 0, second);
   second++;
 
@@ -15,7 +15,7 @@ const getDate = () => {
 
 const startTimer = () => {
   clearInterval(intervalId);
-  timer.classList.remove("pausedTimer");
+  timer?.classList.remove("pausedTimer");
   
   intervalId = setInterval(function () {
     timer.innerText = getDate();
